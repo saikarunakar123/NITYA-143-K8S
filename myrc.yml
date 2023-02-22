@@ -3,16 +3,16 @@ kind: ReplicationController
 metadata:
   name: myjenkins-rc
 spec:
-  replicas: 3
-  selector:
-     app: myjavaapp-pod
-     template:
-       metadata:
+   replicas: 3
+   selector:
+     app: myjenkins-pod
+   template:
+     metadata:
        labels:
           app: myjenkins-pod
-    spec:
-      containers:
-      - name: myjenkins-container
-        image: jenkins:2.60.3
+     spec:
+        containers:
+        - name: myjenkins-container
+          image: jenkins:2.60.3
         ports:
         - containerPort: 8080
